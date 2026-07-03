@@ -1,41 +1,41 @@
 export const projectsData = [
   {
-    id: "lumos-dashboard",
-    title: "Lumos Analytics",
-    category: "Dashboard",
-    description: "A premium financial analytics dashboard providing real-time insights with a dark-mode editorial aesthetic.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
-    stack: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
-    metrics: ["10k+ Users", "99.9% Uptime", "500ms Load Time"],
+    id: "elite-forums",
+    title: "Elite Forums Innova Hack",
+    category: "Open Source / Hackathon",
+    description: "Contributed to the project by solving critical errors, developing new features, and performing core maintenance tasks.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2000",
+    stack: ["React", "Node.js", "TypeScript", "Tailwind"],
+    metrics: ["Bug Fixes", "Feature Implementation", "Code Maintenance"],
     links: {
-      github: "https://github.com",
-      live: "https://example.com"
+      github: "https://github.com/doctron26",
+      live: "https://innovahack.eliteforums.in/"
     }
   },
   {
-    id: "podium-ecommerce",
-    title: "Podium Commerce",
-    category: "E-Commerce",
-    description: "A headless luxury e-commerce platform built for high-end fashion brands.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000",
-    stack: ["React", "Shopify", "Framer Motion", "Stripe"],
-    metrics: ["$2M+ Processed", "Sub-second TTFB", "Custom CMS"],
+    id: "usamedtravel",
+    title: "USAMedTravel",
+    category: "Client Project",
+    description: "A complete production-grade website built for a client, offering medical travel services.",
+    image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=2000",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    metrics: ["Production Grade", "Client Delivered", "Responsive Layout"],
     links: {
-      github: "https://github.com",
-      live: "https://example.com"
+      github: "https://github.com/doctron26",
+      live: "https://www.usamedtravel.com/"
     }
   },
   {
-    id: "aethos-ai",
-    title: "Aethos AI",
-    category: "AI Application",
-    description: "An AI-powered writing assistant that helps authors maintain narrative consistency across long-form content.",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2000",
-    stack: ["OpenAI API", "Next.js", "Prisma", "PostgreSQL"],
-    metrics: ["50k+ Generations", "RAG Architecture", "Real-time sync"],
+    id: "reviewrise",
+    title: "ReviewRise",
+    category: "Web Application",
+    description: "Revamped the user experience by significantly enhancing the UI and integrating dynamic, smooth animations.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000",
+    stack: ["React", "Framer Motion", "Tailwind", "UI/UX"],
+    metrics: ["UI Enhancement", "Animation Integration", "Improved UX"],
     links: {
-      github: "https://github.com",
-      live: "https://example.com"
+      github: "https://github.com/doctron26",
+      live: ""
     }
   }
 ];
