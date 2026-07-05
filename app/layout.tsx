@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { profileData } from "@/data/profile";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import ShaderBackground from "@/components/layout/ShaderBackground";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,12 +73,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col relative text-gray-100 selection:bg-violet-500/30 selection:text-white">
-        <ShaderBackground />
-        <Navbar />
-        <main className="flex-1 w-full">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col relative text-gray-100 selection:bg-violet-500/30 selection:text-white" suppressHydrationWarning>
+        {children}
       </body>
     </html>
   );
