@@ -15,6 +15,7 @@ export default function AdminDashboard() {
   const [error, setError] = useState("");
 
   const [editingHobby, setEditingHobby] = useState<any | null>(null);
+  const [activeUploadHobbyId, setActiveUploadHobbyId] = useState<string | null>(null);
   
   // Cropper state
   const [upImg, setUpImg] = useState<any>();
@@ -90,8 +91,9 @@ export default function AdminDashboard() {
   };
 
   // Image Cropping & Uploading Logic
-  const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>, hobbyId: string) => {
     if (e.target.files && e.target.files.length > 0) {
+      setActiveUploadHobbyId(hobbyId);
       const reader = new FileReader();
       reader.addEventListener("load", () => setUpImg(reader.result));
       reader.readAsDataURL(e.target.files[0]);
@@ -154,6 +156,7 @@ export default function AdminDashboard() {
         // Reset cropper and refresh
         setUpImg(null);
         setCompletedCrop(null);
+        setActiveUploadHobbyId(null);
         fetchHobbies();
       }, 'image/jpeg', 0.9);
 
@@ -246,9 +249,9 @@ export default function AdminDashboard() {
                   {/* Upload New Image to this Hobby */}
                   <div className="bg-black/30 p-6 rounded-xl border border-white/5">
                     <h4 className="font-medium mb-4">Add New Image</h4>
-                    <input type="file" accept="image/*" onChange={onSelectFile} className="mb-4 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20" />
+                    <input type="file" accept="image/*" onChange={(e) => onSelectFile(e, hobby.id)} className="mb-4 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20" />
                     
-                    {upImg && (
+                    {upImg && activeUploadHobbyId === hobby.id && (
                       <div className="mt-4 flex flex-col items-start gap-4">
                         <p className="text-sm text-white/60">Crop your image (Free Aspect Ratio):</p>
                         <ReactCrop
@@ -267,7 +270,7 @@ export default function AdminDashboard() {
                           >
                             {uploadingImage ? <Loader2 className="animate-spin w-4 h-4" /> : 'Upload Cropped Image'}
                           </button>
-                          <button onClick={() => setUpImg(null)} className="px-6 py-2 rounded-lg hover:bg-white/10">Cancel</button>
+                          <button onClick={() => { setUpImg(null); setActiveUploadHobbyId(null); }} className="px-6 py-2 rounded-lg hover:bg-white/10">Cancel</button>
                         </div>
                       </div>
                     )}
