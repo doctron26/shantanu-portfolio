@@ -1,5 +1,5 @@
 export const profileData = {
-  name: "John Doe",
+  name: "Shantanu Shewale",
   role: "Software Engineer",
   availability: "Available for new opportunities",
   about: "I craft world-class web applications that blend sophisticated design with scalable engineering. Based in the digital realm, working globally.",
@@ -14,6 +14,6 @@ export const profileData = {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
-    email: "hello@example.com"
+    email: "shantanushewale26@gmail.com"
   }
 };
